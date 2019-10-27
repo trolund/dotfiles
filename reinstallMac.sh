@@ -35,11 +35,13 @@ brew cask install iterm2
 
 brew cask install slack
 
-brew cask install firefox
+# brew cask install firefox
 
 brew cask install webtorrent
 
-brew cask install brackets
+# brew cask install brackets
+
+brew cask install ngrok
 
 brew cask install google-chrome
 
