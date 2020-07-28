@@ -83,6 +83,8 @@ brew cask install dash
 
 brew cask install go2shell
 
+brew install htop
+
 brew install zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
