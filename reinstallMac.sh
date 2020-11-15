@@ -23,15 +23,15 @@ brew install python3
 
 brew install adoptopenjdk8
 
-brew cask install java8
+brew install java
 
-brew cask install java
+brew install java8
 
-brew cask install docker
+# brew cask install docker
 
 brew cask install vlc
 
-brew cask install iterm2
+# brew cask install iterm2
 
 brew cask install slack
 
@@ -57,7 +57,7 @@ brew cask install visual-studio
 
 brew cask install visual-studio-code
 
-brew cask install phpstorm
+# brew cask install phpstorm
 
 brew cask install intellij-idea
 
@@ -79,15 +79,16 @@ brew cask install betterzip
 
 brew cask install arduino
 
-brew cask install dash
+# brew cask install dash
 
 brew cask install go2shell
 
 brew install htop
 
-brew cask install private-internet-access
-
+brew install node
+ 
 brew install zsh
+
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo installation done!!
