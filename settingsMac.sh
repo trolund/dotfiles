@@ -99,6 +99,10 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+# Longer history. 
+
+HISTSIZE=10000000
+
 # Kill affected apps
 for app in "Dock" "Finder"; do
   killall "${app}" > /dev/null 2>&1

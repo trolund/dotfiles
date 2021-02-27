@@ -27,7 +27,7 @@ brew install java
 
 brew install java8
 
-# brew cask install docker
+brew cask install docker
 
 brew cask install vlc
 
@@ -35,7 +35,7 @@ brew cask install vlc
 
 brew cask install slack
 
-# brew cask install firefox
+brew cask install firefox
 
 brew cask install webtorrent
 
