@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo Setting up shell...
+
 # Source the functions from zshrc_utils.sh
 source "$(dirname "$0")/utils.sh"
 
@@ -17,8 +19,6 @@ fi
 
 # Define ZSH_CUSTOM if not set by Oh-My-Zsh
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
-
-echo Setting up shell
 
 # Make sure the script is run with bash
 if [ -z "$BASH_VERSION" ]; then
@@ -61,7 +61,7 @@ add_lines_to_zshrc \
     'ZSH_THEME="powerlevel10k/powerlevel10k"' \
     "source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme"
 
-# Install standalone zsh plugins
+# Install standalone zsh plugins repositories
 PLUGINS=(
     "zsh-users/zsh-autosuggestions"
     "zsh-users/zsh-syntax-highlighting"
@@ -70,6 +70,13 @@ PLUGINS=(
     "zsh-users/zsh-completions"
     "zsh-users/zsh-history-substring-search"
 )
+
+# list with standalone plugin names
+PLUGINS_EXSTRA=()
+for plugin in "${PLUGINS[@]}"; do
+    repository_name="${plugin##*/}"
+    PLUGINS_EXSTRA+=("$repository_name")
+done
 
 for plugin in "${PLUGINS[@]}"; do
     plugin_name=$(basename "$plugin")
@@ -93,7 +100,13 @@ PLUGINS_TO_ADD=(
     "dotnet"
     "docker-compose"
     "history"
+    "iterm2"
+    "macos"
+    "npm"
 )
+
+# list with all plugin names
+ALL_PLUGINS=("${PLUGINS_TO_ADD[@]}" "${PLUGINS_EXSTRA[@]}")
 
 # Function to update plugins in .zshrc
 update_zshrc_plugins() {
@@ -106,17 +119,17 @@ update_zshrc_plugins() {
     # Check if plugins line exists and update it
     if grep -q "^plugins=" "$ZSHRC_PATH"; then
         echo "Updating plugins line in $ZSHRC_PATH..."
-        sed -i '' "s/^plugins=(.*)$/plugins=(${PLUGINS_TO_ADD[*]})/" "$ZSHRC_PATH"
+        sed -i '' "s/^plugins=(.*)$/plugins=(${ALL_PLUGINS[*]})/" "$ZSHRC_PATH"
     else
         echo "Adding plugins to $ZSHRC_PATH..."
-        echo "plugins=(${PLUGINS_TO_ADD[*]})" >>"$ZSHRC_PATH"
+        echo "plugins=(${ALL_PLUGINS[*]})" >>"$ZSHRC_PATH"
     fi
 }
 
 # Call the function to update .zshrc
 update_zshrc_plugins
 
-echo "Zsh plugins updated in .zshrc."
+echo "Zsh installed and configured successfully."
 
 exit 0
 # restart zsh and run 'p10k configure'
