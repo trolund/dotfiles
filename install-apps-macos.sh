@@ -10,6 +10,7 @@ if test ! $(which brew); then
 fi
 
 # Update homebrew recipes
+brew cleanup
 brew update
 
 brew install git
