@@ -2,8 +2,11 @@
 
 echo "Setting up macOS..."
 
-./install-apps-macos.sh
+# Set settings for macOS
 ./settings-macos.sh
+# Install applications
+./install-apps-macos.sh
+# Set up shell (zsh)
 ./shell-setup.sh
 
 echo "macOS setup complete."
