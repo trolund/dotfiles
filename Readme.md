@@ -1,8 +1,8 @@
-# macOS Setup Scripts
+# macOS Setup Scripts 👨‍💻
 
 This repository contains a collection of Bash scripts designed to automate the setup and configuration of macOS to my preferences. Each script handles a specific aspect of the setup process, including system settings, application installations, and shell environment configuration.
 
-## Overview
+## Overview 🤘
 
 1. **`setup-macos.sh`**: Orchestrates the complete macOS setup process by invoking other scripts for system settings, application installations, and shell configuration.
 
@@ -14,12 +14,12 @@ This repository contains a collection of Bash scripts designed to automate the s
 
 5. **`utils.sh`**: script provides utility functions used by the other scripts.
 
-## Prerequisites
+## Prerequisites 🙏
 
 - **macOS**: The scripts are designed for use on macOS systems.
 - **Bash**: The scripts are written in Bash and should be executed in a Bash shell.
 
-## Usage
+## Usage 🛠
 
 1. **Clone the Repository**
 
@@ -49,12 +49,12 @@ This repository contains a collection of Bash scripts designed to automate the s
    - **`install-apps-macos.sh`**: Installs necessary applications and command-line tools via Homebrew.
    - **`shell-setup.sh`**: Configures Zsh, including themes and plugins.
 
-## Notes
+## Notes 🗒️
 
 - Some changes made by `settings-macos.sh` may require a logout or restart to take effect.
 - Ensure you have an active internet connection for downloading and installing applications.
 - Modify the scripts as needed to fit your specific requirements or preferences.
 
-## Contributing
+## Contributing 💪
 
 Feel free to fork the repository, make your modify it to your own preferences.
