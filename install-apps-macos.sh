@@ -145,6 +145,7 @@ apps=(
     microsoft-teams
     jetbrains-toolbox
     font-fira-code
+    devtoys
 )
 
 # Install each application
