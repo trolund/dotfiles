@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Script utilities 
+# Author: Troels Lund
+
 # Function to add a string to ~/.zshrc
 add_to_zshrc() {
     local string="$1"

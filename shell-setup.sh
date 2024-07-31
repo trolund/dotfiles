@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Script set up the shell (zsh)
+# Author: Troels Lund
+
 # =============================
 # Configure Zsh
 # =============================
