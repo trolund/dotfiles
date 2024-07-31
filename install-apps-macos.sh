@@ -146,6 +146,7 @@ apps=(
     jetbrains-toolbox
     font-fira-code
     devtoys
+    onyx
 )
 
 # Install each application

@@ -100,6 +100,12 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Finder > View > Show Path Bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Hide desktop icons
+defaults write com.apple.finder CreateDesktop -bool false
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Others:
