@@ -14,6 +14,8 @@ This repository contains a collection of Bash scripts designed to automate the s
 
 5. **`utils.sh`**: script provides utility functions used by the other scripts.
 
+6. **`Manual-steps`**: contain a small guid to manual steps that could not be automated or is not automated yet.
+
 ## Prerequisites 🙏
 
 - **macOS**: The scripts are designed for use on macOS systems.
