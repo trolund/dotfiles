@@ -1,3 +1,10 @@
+# Script set up the MacOS settings
+# Author: Troels Lund
+
+# =============================
+# Configure MacOS Defaults
+# =============================
+
 # System Preferences > General > Appearance
 defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
 
@@ -13,15 +20,16 @@ defaults write -globalDomain NSTableViewDefaultSizeMode -int 2
 defaults -currentHost write com.apple.screensaver idleTime -int 0
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+DOCK_SIZE=80
 
 # System Preferences > Dock > Size:
-defaults write com.apple.dock tilesize -int 50
+defaults write com.apple.dock tilesize -int $DOCK_SIZE
 
 # System Preferences > Dock > Magnification:
 defaults write com.apple.dock magnification -bool false
 
 # System Preferences > Dock > Size (magnified):
-defaults write com.apple.dock largesize -int 50
+defaults write com.apple.dock largesize -int $DOCK_SIZE
 
 # System Preferences > Dock > Minimize windows using: Scale effect
 defaults write com.apple.dock mineffect -string "genie"
@@ -33,7 +41,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock autohide -bool true
 
 # System Preferences > Dock > Automatically hide and show the Dock (duration)
-defaults write com.apple.dock autohide-time-modifier -float 0.5
+defaults write com.apple.dock autohide-time-modifier -float 0.2
 
 # System Preferences > Dock > Automatically hide and show the Dock (delay)
 defaults write com.apple.dock autohide-delay -float 0.12

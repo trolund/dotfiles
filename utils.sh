@@ -163,3 +163,12 @@ clone_ohmyzsh_plugin() {
   fi
 }
 
+check_and_install_brew_package() {
+    local package_name=$1
+    if ! brew list "$package_name" &>/dev/null; then
+        echo "Installing $package_name..."
+        brew install "$package_name"
+    else
+        echo "$package_name is already installed."
+    fi
+}

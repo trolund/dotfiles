@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# =============================
+# Configure Zsh
+# =============================
+
 echo Setting up shell...
 
 # Source the functions from zshrc_utils.sh
