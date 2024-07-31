@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Function to add a string to ~/.zshrc
 add_to_zshrc() {
     local string="$1"

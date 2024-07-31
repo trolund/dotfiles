@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Script set up the MacOS settings
 # Author: Troels Lund
 
