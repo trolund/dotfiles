@@ -59,4 +59,4 @@ This repository contains a collection of Bash scripts designed to automate the s
 
 ## Contributing 💪
 
-Feel free to fork the repository, make your modify it to your own preferences.
+Feel free to fork the repository and modify it to your own preferences.
