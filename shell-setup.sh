@@ -110,6 +110,9 @@ PLUGINS_TO_ADD=(
     "iterm2"
     "macos"
     "npm"
+    "aliases"
+    "cp"
+    "z"
 )
 
 # list with all plugin names
