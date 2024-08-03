@@ -5,6 +5,10 @@
 
 source "$(dirname "$0")/utils.sh"
 
+# =============================
+# Update macOS
+# =============================
+
 # Ask the user if they want to update the OS
 read -p "Do you want to update the macOS? (y/n): " response
 
