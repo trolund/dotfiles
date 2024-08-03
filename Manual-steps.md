@@ -29,3 +29,10 @@ The *Powerlevel10k* theme can be configured by running the following command.
 ```bash
     p10k configure
 ```
+
+disabling Powerlevel10k configuration
+wizard, type the following command.
+
+```bash
+    echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >>! ~/.zshrc
+```
