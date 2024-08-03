@@ -441,6 +441,9 @@ add_to_zshrc "alias sysinfo='system_profiler SPSoftwareDataType'"
 # Watch system logs in real-time
 add_to_zshrc "alias syswatch='tail -f /var/log/system.log'"
 
+# open Rider
+add_to_zshrc "alias rider='open -a /Applications/Rider.app'"
+
 echo "Zsh installed and configured successfully."
 
 exit 0
