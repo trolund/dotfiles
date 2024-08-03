@@ -52,6 +52,19 @@ reset_ohmyzsh() {
     fi
 }
 
+backup_zshrc() {
+    # Path to the .zshrc file
+    ZSHRC_PATH="$HOME/.zshrc"
+
+    # Backup the existing .zshrc file
+    if [ -f "$ZSHRC_PATH" ]; then
+    echo "Backing up existing .zshrc to .zshrc.backup..."
+    cp "$ZSHRC_PATH" "$ZSHRC_PATH.backup.$(date +%F_%T)"
+    else
+    echo ".zshrc file not found. No backup created."
+    fi
+}
+
 # Function to add a single string to ~/.zshrc
 add_to_zshrc() {
     local string="$1"
@@ -62,10 +75,6 @@ add_to_zshrc() {
         echo ".zshrc file not found. Creating a new one..."
         touch "$zshrc_path"
     fi
-    
-    # Backup the existing .zshrc file
-    echo "Backing up existing .zshrc to .zshrc.backup..."
-    cp "$zshrc_path" "$zshrc_path.backup.$(date +%F_%T)"
 
     # Check if the string already exists in .zshrc
     if grep -Fxq "$string" "$zshrc_path"; then
@@ -73,7 +82,7 @@ add_to_zshrc() {
     else
         # Add the string to the end of the .zshrc file
         echo "$string" >> "$zshrc_path"
-        echo "The string has been added to .zshrc."
+        echo "The string ($string) has been added to .zshrc."
     fi
 }
 

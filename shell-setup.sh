@@ -22,6 +22,9 @@ ZSH_PATH="${ZSH_PATH:-$HOME/.oh-my-zsh}"
 if [ ! -f "$ZSHRC_PATH" ]; then
     echo "Creating $ZSHRC_PATH..."
     touch "$ZSHRC_PATH"
+else
+    echo "$ZSHRC_PATH already exists."
+    backup_zshrc
 fi
 
 # Define ZSH_CUSTOM if not set by Oh-My-Zsh
@@ -145,7 +148,7 @@ update_zshrc_plugins() {
 update_zshrc_plugins
 
 # configure aliases
-add_to_zshrc "# Add custom aliases \n"
+add_to_zshrc "# Add custom aliases"
 
 # Add aliases to .zshrc
 add_to_zshrc "alias zshconfig='code ~/.zshrc'"
@@ -178,7 +181,7 @@ add_to_zshrc "alias home='cd ~'"
 # Change to parent directory
 add_to_zshrc "alias b='cd ..'"
 add_to_zshrc "alias bb='cd ../..'"
-add_to_zshrc "alias ='cd ../../..'"
+add_to_zshrc "alias bbb='cd ../../..'"
 
 # Go back to the previous directory
 add_to_zshrc "alias back='cd ..'"
