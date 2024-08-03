@@ -4,8 +4,27 @@
 # Author: Troels Lund
 
 # =============================
+# Create the Code directory
+# =============================
+
+# Define the directory path
+codeDirectory=~/Documents/Code
+
+# Check if the directory exists
+if [ ! -d "$codeDirectory" ]; then
+    echo "Directory does not exist. Creating $codeDirectory..."
+    mkdir -p "$codeDirectory"
+    echo "Code directory created successfully."
+else
+    echo "Code directory already exists."
+fi
+
+# =============================
 # Configure MacOS Defaults
 # =============================
+
+# Set computer name
+scutil --set ComputerName "trolund-macbook"
 
 # System Preferences > General > Appearance
 defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
@@ -27,11 +46,11 @@ DOCK_SIZE=80
 # System Preferences > Dock > Size:
 defaults write com.apple.dock tilesize -int $DOCK_SIZE
 
-# System Preferences > Dock > Magnification:
-defaults write com.apple.dock magnification -bool false
-
 # System Preferences > Dock > Size (magnified):
 defaults write com.apple.dock largesize -int $DOCK_SIZE
+
+# System Preferences > Dock > Magnification:
+defaults write com.apple.dock magnification -bool false
 
 # System Preferences > Dock > Minimize windows using: Scale effect
 defaults write com.apple.dock mineffect -string "genie"
@@ -43,10 +62,10 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock autohide -bool true
 
 # System Preferences > Dock > Automatically hide and show the Dock (duration)
-defaults write com.apple.dock autohide-time-modifier -float 0.2
+defaults write com.apple.dock autohide-time-modifier -float 0.1
 
 # System Preferences > Dock > Automatically hide and show the Dock (delay)
-defaults write com.apple.dock autohide-delay -float 0.12
+defaults write com.apple.dock autohide-delay -float 0.05
 
 # System Preferences > Dock > Show indicators for open applications
 defaults write com.apple.dock show-process-indicators -bool true
@@ -58,6 +77,10 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # System Preferences > Mission Controll > Dashboard
 defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# Clear existing Dock apps
+# Never use the dock to launch apps, use spotlight instead
+defaults write com.apple.dock persistent-apps -array
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -100,11 +123,48 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Finder > View > Show Path Bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
 # Show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Hide desktop icons
 defaults write com.apple.finder CreateDesktop -bool false
+
+# Search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Keep folders on top when sorting by name
+# defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# backup the current sidebar
+defaults export com.apple.sidebarlists ~/Desktop/sidebarlists_backup.plist
+
+# Set sidebar icon size to medium
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+
+# Remove all tags from the Finder sidebar
+defaults write com.apple.finder ShowRecentTags -bool false
+defaults write com.apple.finder SidebarTagsSctionDisclosedState -bool false
+# Remove all default tags
+defaults write com.apple.finder FavoriteTags -array
+# Disable tags in open/save dialogs
+defaults write NSGlobalDomain NSTagPickerDisclosedState -bool false
+
+# defaults delete com.apple.sidebarlists.plist favoritesitems
+
+# # Define an array of paths to add
+# favorites=(
+#   "~/Documents/Code"
+#   "~/Downloads"
+# )
+
+# # Add each path to the Finder sidebar
+# for folder in "${favorites[@]}"; do
+#   defaults write com.apple.sidebarlists.plist favoritesitems -dict-add favorites $folder
+#   echo "Added $folder to Finder sidebar"
+# done
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
