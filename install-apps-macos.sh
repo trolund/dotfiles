@@ -5,6 +5,26 @@
 
 source "$(dirname "$0")/utils.sh"
 
+# Ask the user if they want to update the OS
+read -p "Do you want to update the macOS? (y/n): " response
+
+# Handle the user's response
+case "$response" in
+    y|Y|yes|YES|Yes)
+        echo "Updating macOS..."
+        sudo softwareupdate -i -a
+        echo "macOS updated successfully."
+        ;;
+    n|N|no|NO|No)
+        echo "macOS update canceled."
+        ;;
+    *)
+        echo "Invalid input. Please enter y or n."
+        ;;
+esac
+
+# =============================
+
 echo "Installation started..."
 
 # =============================
