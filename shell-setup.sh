@@ -165,9 +165,9 @@ add_to_zshrc "alias zshthemes='code $ZSH_CUSTOM/themes'"
 # Add custom aliases 
 
 # Search for files and open them in Neovim
-add_to_zshrc 'alias nvs='\''nvim $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
+add_to_zshrc 'alias sn='\''nvim $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
 # Search for files and open them in Vscode
-add_to_zshrc 'alias cs='\''code $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
+add_to_zshrc 'alias sc='\''code $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
 
 # Go to code folder
 add_to_zshrc "alias cf='cd /Users/troelslund/Documents/Code'"
