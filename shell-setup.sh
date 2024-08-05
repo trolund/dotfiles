@@ -76,6 +76,9 @@ add_lines_to_zshrc \
 
 add_to_zshrc "# Add plugins"
 
+# Add fzf 
+add_to_zshrc "source <(fzf --zsh)"
+
 # Install standalone zsh plugins repositories
 PLUGINS=(
     "zsh-users/zsh-autosuggestions"
@@ -121,6 +124,7 @@ PLUGINS_TO_ADD=(
     "aliases"
     "cp"
     "z"
+    "fzf"
 )
 
 # list with all plugin names
@@ -159,6 +163,7 @@ add_to_zshrc "alias zshplugins='code $ZSH_CUSTOM/plugins'"
 add_to_zshrc "alias zshthemes='code $ZSH_CUSTOM/themes'"
 
 # Add custom aliases 
+add_to_zshrc 'alias nvs='\''nvim $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
 
 # Go to code folder
 add_to_zshrc "alias cf='cd /Users/troelslund/Documents/Code'"

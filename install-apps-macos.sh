@@ -86,6 +86,9 @@ check_and_install_brew_package nvm
 
 # Script to Install System Utilities
 
+# Install fzf (Command-line fuzzy finder)
+check_and_install_brew_package fzf
+
 # Install htop (System monitoring tool)
 check_and_install_brew_package htop
 
@@ -100,13 +103,6 @@ check_and_install_brew_package tmux
 
 # Install neofetch (Command-line system information tool)
 check_and_install_brew_package neofetch
-
-# Install fzf (Command-line fuzzy finder)
-# check_and_install_brew_package fzf
-# if brew list fzf &>/dev/null; then
-#     # To install useful key bindings and fuzzy completion:
-#     $(brew --prefix)/opt/fzf/install
-# fi
 
 # Install bat (Cat clone with syntax highlighting)
 check_and_install_brew_package bat
