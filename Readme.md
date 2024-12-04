@@ -4,7 +4,7 @@ This repository contains a collection of Bash scripts designed to automate the s
 
 ## Overview 🤘
 
-1. **`setup-macos.sh`**: Orchestrates the complete macOS setup process by invoking other scripts for system settings, application installations, and shell configuration.
+1. **`main.sh`**: Orchestrates the complete macOS setup process by invoking other scripts for system settings, application installations, and shell configuration.
 
 2. **`settings-macos.sh`**: Configures macOS system settings to enhance productivity and user experience. This includes setting preferences for the appearance, dock, mission control, keyboard, trackpad, finder, and other system options.
 
@@ -15,11 +15,6 @@ This repository contains a collection of Bash scripts designed to automate the s
 5. **`utils.sh`**: script provides utility functions used by the other scripts.
 
 6. **`Manual-steps`**: contain a small guid to manual steps that could not be automated or is not automated yet.
-
-## Prerequisites 🙏
-
-- **macOS**: The scripts are designed for use on macOS systems.
-- **Bash**: The scripts are written in Bash and should be executed in a Bash shell.
 
 ## Usage 🛠
 

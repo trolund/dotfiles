@@ -76,7 +76,7 @@ add_lines_to_zshrc \
 
 add_to_zshrc "# Add plugins"
 
-# Add fzf 
+# Add fzf
 add_to_zshrc "source <(fzf --zsh)"
 
 # Install standalone zsh plugins repositories
@@ -162,7 +162,11 @@ add_to_zshrc "alias zshupdate='upgrade_ohmyzsh'"
 add_to_zshrc "alias zshplugins='code $ZSH_CUSTOM/plugins'"
 add_to_zshrc "alias zshthemes='code $ZSH_CUSTOM/themes'"
 
-# Add custom aliases 
+# Add custom aliases
+
+# JavaScript
+add_to_zshrc "alias nfresh='rm -rf node_modules/ package-lock.json && npm install'"
+add_to_zshrc "alias watch='npm run dev'"
 
 # Search for files and open them in Neovim
 add_to_zshrc 'alias sn='\''nvim $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
@@ -170,7 +174,7 @@ add_to_zshrc 'alias sn='\''nvim $(fzf -m --preview '\"'bat --color=always {}'\"'
 add_to_zshrc 'alias sc='\''code $(fzf -m --preview '\"'bat --color=always {}'\"')'\'
 
 # Go to code folder
-add_to_zshrc "alias cf='cd /Users/troelslund/Documents/Code'"
+add_to_zshrc "alias cf='cd $HOME/Documents/Code'"
 
 # Clear the terminal screen
 add_to_zshrc "alias c='clear'"
@@ -315,7 +319,7 @@ add_to_zshrc "alias iterm='open -a iTerm'"
 # Open Terminal
 add_to_zshrc "alias term='open -a Terminal'"
 
-# Clipboard history 
+# Clipboard history
 add_to_zshrc "alias cliphist='pbpaste > ~/clipboard-history.txt'"
 
 # Change audio output to internal speakers
@@ -455,6 +459,10 @@ add_to_zshrc "alias syswatch='tail -f /var/log/system.log'"
 
 # open Rider
 add_to_zshrc "alias rider='open -a /Applications/Rider.app'"
+
+### add to path
+add_to_zshrc "# Add .NET Core SDK tools"
+add_to_zshrc "PATH='$PATH:/Users/troelslund/.dotnet/tools'"
 
 echo "Zsh installed and configured successfully."
 

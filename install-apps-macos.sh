@@ -14,17 +14,17 @@ read -p "Do you want to update the macOS? (y/n): " response
 
 # Handle the user's response
 case "$response" in
-    y|Y|yes|YES|Yes)
-        echo "Updating macOS..."
-        sudo softwareupdate -i -a
-        echo "macOS updated successfully."
-        ;;
-    n|N|no|NO|No)
-        echo "macOS update canceled."
-        ;;
-    *)
-        echo "Invalid input. Please enter y or n."
-        ;;
+y | Y | yes | YES | Yes)
+    echo "Updating macOS..."
+    sudo softwareupdate -i -a
+    echo "macOS updated successfully."
+    ;;
+n | N | no | NO | No)
+    echo "macOS update canceled."
+    ;;
+*)
+    echo "Invalid input. Please enter y or n."
+    ;;
 esac
 
 # =============================
@@ -38,6 +38,7 @@ echo "Installation started..."
 echo "Installing Xcode Developer Kit..."
 xcode-select --install &>/dev/null
 
+# For apple silicon
 echo "Installing Rosetta..."
 softwareupdate --install-rosetta --agree-to-license
 
@@ -65,19 +66,13 @@ brew cleanup
 # Install Git
 check_and_install_brew_package git
 
-# Configure Git
-echo "Configuring Git..."
-git config --global user.name "Troels Lund"
-git config --global user.email "trolund@gmail.com"
-
 # Install Python 3
 check_and_install_brew_package python3
 
-# Install Java 
-echo "Installing Java..."
-brew install java
-brew install openjdk # Install the latest Java version
-brew install maven
+# Install Java
+check_and_install_brew_package install java
+check_and_install_brew_package install openjdk # Install the latest Java version
+check_and_install_brew_package install maven
 
 # Install Node.js
 check_and_install_brew_package node
@@ -119,6 +114,9 @@ check_and_install_brew_package watch
 # Install tldr (Simplified and community-driven man pages)
 check_and_install_brew_package tldr
 
+# Install the Azure CLI
+check_and_install_brew_package azure-cli
+
 echo "All system utilities have been checked and installed if not already present."
 
 # Install Docker and Docker Compose
@@ -137,7 +135,6 @@ apps=(
     vlc
     slack
     firefox
-    # webtorrent
     ngrok
     google-chrome
     macs-fan-control
@@ -147,20 +144,15 @@ apps=(
     visual-studio
     visual-studio-code
     rider
-    # phpstorm
     intellij-idea
-    # webstorm
     postman
     transmit
     private-internet-access
     spectacle
-    sequel-pro
-    pycharm
+    # sequel-pro
+    # pycharm
     iterm2
-    notion
-    # betterzip
-    # arduino
-    # dash
+    # notion
     go2shell
     microsoft-teams
     jetbrains-toolbox
@@ -178,5 +170,10 @@ for app in "${apps[@]}"; do
         echo "$app is already installed."
     fi
 done
+
+source ~/.zshrc
+
+# Install .NET tools
+# dotnet tool install csharpier -g
 
 echo "Installation done!"

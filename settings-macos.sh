@@ -4,27 +4,41 @@
 # Author: Troels Lund
 
 # =============================
+# Variables
+# =============================
+
+MACHINE_NAME=trolund-macbook
+# Define the directory path
+CODE_DIRECTORY=~/Documents/Code
+# Define the dock size
+DOCK_SIZE=80
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# =============================
 # Create the Code directory
 # =============================
 
-# Define the directory path
-codeDirectory=~/Documents/Code
-
 # Check if the directory exists
-if [ ! -d "$codeDirectory" ]; then
-    echo "Directory does not exist. Creating $codeDirectory..."
-    mkdir -p "$codeDirectory"
-    echo "Code directory created successfully."
+if [ ! -d "$CODE_DIRECTORY" ]; then
+  echo "Directory does not exist. Creating $CODE_DIRECTORY..."
+  mkdir -p "$CODE_DIRECTORY"
+  echo "Code directory created successfully."
 else
-    echo "Code directory already exists."
+  echo "Code directory already exists."
 fi
 
 # =============================
 # Configure MacOS Defaults
 # =============================
 
-# Set computer name
-scutil --set ComputerName "trolund-macbook"
+# Set computer name (as done via System Preferences → Sharing)
+scutil --set ComputerName $MACHINE_NAME
+sudo scutil --set HostName $MACHINE_NAME
+sudo scutil --set LocalHostName $MACHINE_NAME
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $MACHINE_NAME
 
 # System Preferences > General > Appearance
 defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
@@ -41,7 +55,6 @@ defaults write -globalDomain NSTableViewDefaultSizeMode -int 2
 defaults -currentHost write com.apple.screensaver idleTime -int 0
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-DOCK_SIZE=80
 
 # System Preferences > Dock > Size:
 defaults write com.apple.dock tilesize -int $DOCK_SIZE
@@ -147,24 +160,14 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 # Remove all tags from the Finder sidebar
 defaults write com.apple.finder ShowRecentTags -bool false
 defaults write com.apple.finder SidebarTagsSctionDisclosedState -bool false
+
 # Remove all default tags
 defaults write com.apple.finder FavoriteTags -array
+
 # Disable tags in open/save dialogs
 defaults write NSGlobalDomain NSTagPickerDisclosedState -bool false
 
 # defaults delete com.apple.sidebarlists.plist favoritesitems
-
-# # Define an array of paths to add
-# favorites=(
-#   "~/Documents/Code"
-#   "~/Downloads"
-# )
-
-# # Add each path to the Finder sidebar
-# for folder in "${favorites[@]}"; do
-#   defaults write com.apple.sidebarlists.plist favoritesitems -dict-add favorites $folder
-#   echo "Added $folder to Finder sidebar"
-# done
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -175,13 +178,9 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# Longer history. 
-
-HISTSIZE=10000000
-
 # Kill affected apps
 for app in "Dock" "Finder"; do
-  killall "${app}" > /dev/null 2>&1
+  killall "${app}" >/dev/null 2>&1
 done
 
 # Done

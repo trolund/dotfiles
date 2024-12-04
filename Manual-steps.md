@@ -1,4 +1,3 @@
-
 # Manual Settings
 
 ## Iterm2 Settings
