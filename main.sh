@@ -5,13 +5,14 @@
 
 echo "👨🏻‍🚀 Admin password required for some tasks doing the setup."
 
+# Ask for the administrator password upfront
+sudo -v
+
+# Make scripts executable
 chmod +x install-apps-macos.sh
 chmod +x settings-macos.sh
 chmod +x shell-setup.sh
 chmod +x git-setup.sh
-
-# Ask for the administrator password upfront
-sudo -v
 
 echo "🏃 Running macOS bootstrap script..."
 

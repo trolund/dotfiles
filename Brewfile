@@ -58,7 +58,6 @@ cask "font-fira-code"
 ## Install Mac App Store applications
 # 'mas install' requires the app id, which can be found by running 'mas search <app_name>'
 mas "The Unarchiver", id: 425424353
-mas "Amphetamine", id: 937984704
 mas "Slack", id: 803453959
 mas "Microsoft Teams", id: 1417478133
 mas "Microsoft OneDrive", id: 823766827 
