@@ -3,7 +3,6 @@
 # =============================
 
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 
 # =============================
 # Command Line Tools
@@ -44,7 +43,6 @@ cask "google-chrome"
 cask "ngrok"
 cask "macs-fan-control"
 cask "dotnet"
-cask "dotnet-sdk"
 cask "visual-studio-code"
 cask "rider"
 cask "intellij-idea"
@@ -68,4 +66,22 @@ mas "Magnet", id: 441258766
 
 ## Install Visual Studio Code extensions
 # 'vscode --install-extension' requires the extension id, which can be found by running 'code --list-extensions'
-# vscode "ms-azuretools.vscode-bicep"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-azuretools.vscode-bicep"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-azuretools.vscode-azurefunctions"
+vscode "ms-dotnettools.dotnet-interactive-vscode"
+vscode "ms-dotnettools.vscode-dotnet-pack"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-dotnettools.vscodeintellicode-csharp"
+vscode "ms-playwright.playwright"
+
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.copilot-labs"
+vscode "yzhang.markdown-all-in-one"
+vscode "streetsidesoftware.code-spell-checker"
+
+
+
