@@ -3,7 +3,7 @@
 # Script set up the macOS settings and install applications
 # Author: Troels Lund
 
-echo "👨🏻‍🚀 Admin password required for some tasks"
+echo "👨🏻‍🚀 Admin password required for some tasks doing the setup."
 
 # Ask for the administrator password upfront
 sudo -v
@@ -23,7 +23,7 @@ echo "🛠 Setting up macOS settings..."
 echo "🛠 macOS settings complete."
 
 # Set up shell (zsh)
-echo "🐚 Setting up shell..."
+echo "🐚 Setting up shell (zsh)..."
 ./shell-setup.sh
 echo "🐚 Shell setup complete."
 

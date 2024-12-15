@@ -1,4 +1,4 @@
-# macOS Setup Scripts 👨‍💻
+# MacOS Setup Scripts 👨‍💻
 
 This repository contains a collection of Bash scripts designed to automate the setup and configuration of macOS to my preferences. Each script handles a specific aspect of the setup process, including system settings, application installations, and shell environment configuration.
 

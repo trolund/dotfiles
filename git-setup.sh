@@ -49,7 +49,6 @@ y | Y | yes | YES | Yes)
     read -p "Press enter to continue after adding the SSH key to GitHub..."
     ;;
 n | N | no | NO | No)
-
     echo "Skipping SSH key setup for GitHub."
     exit 0
     ;;

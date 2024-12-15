@@ -3,8 +3,6 @@
 # Script to install applications on macOS using Homebrew
 # Author: Troels Lund
 
-source "$(dirname "$0")/utils.sh"
-
 # =============================
 # Update macOS
 # =============================
@@ -27,8 +25,6 @@ n | N | no | NO | No)
     ;;
 esac
 
-# =============================
-
 echo "Installation started..."
 
 # =============================
@@ -38,9 +34,20 @@ echo "Installation started..."
 echo "Installing Xcode Developer Kit..."
 xcode-select --install &>/dev/null
 
-# For apple silicon
-echo "Installing Rosetta..."
-softwareupdate --install-rosetta --agree-to-license
+# =============================
+# Install Rosetta for Apple Silicon
+# =============================
+
+# Check if the system is running on Apple Silicon
+if [[ $(uname -m) == "arm64" ]]; then
+    # Check if Rosetta is installed; install if not
+    if ! /usr/sbin/softwareupdate --history | grep --silent "Command Line Tools for Xcode"; then
+        echo "Installing Rosetta..."
+        softwareupdate --install-rosetta --agree-to-license
+    else
+        echo "Rosetta is already installed."
+    fi
+fi
 
 # =============================
 # Install Homebrew
@@ -64,7 +71,7 @@ brew cleanup
 # =============================
 echo "Installing Homebrew packages..."
 
-# Install Homebrew packages
+# Install Homebrew packages from the Brewfile
 brew bundle
 
 # reload the ~/.zshrc file
