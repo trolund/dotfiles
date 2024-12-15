@@ -3,15 +3,13 @@
 # Script set up the MacOS settings
 # Author: Troels Lund
 
-# =============================
-# Variables
-# =============================
-
-MACHINE_NAME=trolund-macbook
-# Define the directory path
-CODE_DIRECTORY=~/Documents/Code
-# Define the dock size
-DOCK_SIZE=80
+# Load variables from the .env file
+if [ -f .env ]; then
+  source .env
+else
+  echo ".env file not found!"
+  exit 1
+fi
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change

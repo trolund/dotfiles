@@ -3,7 +3,7 @@
 # Script set up the macOS settings and install applications
 # Author: Troels Lund
 
-echo "admin password required for some tasks"
+echo "👨🏻‍🚀 Admin password required for some tasks"
 
 # Ask for the administrator password upfront
 sudo -v
@@ -22,14 +22,14 @@ echo "🛠 Setting up macOS settings..."
 ./settings-macos.sh
 echo "🛠 macOS settings complete."
 
-# Set up Git
-echo "🐙 Setting up Git..."
-./git-setup.sh
-echo "🐙 Git setup complete."
-
 # Set up shell (zsh)
 echo "🐚 Setting up shell..."
 ./shell-setup.sh
 echo "🐚 Shell setup complete."
+
+# Set up Git
+echo "🐙 Setting up Git..."
+./git-setup.sh
+echo "🐙 Git setup complete."
 
 echo "✅ macOS setup complete."

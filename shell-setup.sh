@@ -9,7 +9,7 @@
 
 echo Setting up shell...
 
-# Source the functions from zshrc_utils.sh
+# Source the functions from utils.sh
 source "$(dirname "$0")/utils.sh"
 
 # Define the path to the .zshrc file
