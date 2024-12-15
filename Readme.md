@@ -32,7 +32,8 @@ This repository contains a collection of Bash scripts designed to automate the s
    Execute the main setup script to start the entire setup process:
 
    ```bash
-   ./setup-macos.sh
+   chmod +x main.sh
+   ./main.sh
    ```
 
    This script will:

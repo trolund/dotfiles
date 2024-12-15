@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Script to configure Git and set up an SSH key for GitHub
+# Author: Troels Lund
+
 # Load variables from the .env file
 if [ -f .env ]; then
     source .env

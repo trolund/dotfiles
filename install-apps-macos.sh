@@ -63,9 +63,6 @@ else
     brew upgrade
 fi
 
-# Clean up old versions of installed packages
-brew cleanup
-
 # =============================
 # Install Homebrew packages
 # =============================
@@ -73,6 +70,9 @@ echo "Installing Homebrew packages..."
 
 # Install Homebrew packages from the Brewfile
 brew bundle
+
+# clean up brew
+brew cleanup
 
 # reload the ~/.zshrc file
 source ~/.zshrc
