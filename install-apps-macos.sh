@@ -91,5 +91,4 @@ dotnet tool install try-convert -g
 dotnet tool install dotnet-dump -g
 dotnet tool install dotnet-serve -g
 dotnet tool install NuKeeper -g
-
 echo "Installation done!"
