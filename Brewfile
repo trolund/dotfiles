@@ -80,6 +80,3 @@ vscode "github.copilot-chat"
 vscode "github.copilot-labs"
 vscode "yzhang.markdown-all-in-one"
 vscode "streetsidesoftware.code-spell-checker"
-
-
-
