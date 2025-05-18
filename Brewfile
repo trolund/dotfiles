@@ -54,6 +54,7 @@ cask "go2shell"
 cask "monitorcontrol"
 cask "microsoft-teams"
 cask "font-fira-code"
+cask "hammerspoon"
 
 ## Install Mac App Store applications
 # 'mas install' requires the app id, which can be found by running 'mas search <app_name>'
