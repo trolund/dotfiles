@@ -13,6 +13,7 @@ chmod +x install-apps-macos.sh
 chmod +x settings-macos.sh
 chmod +x shell-setup.sh
 chmod +x git-setup.sh
+chmod +x hammerspoon/hammerspoon.sh
 
 echo "🏃 Running macOS bootstrap script..."
 
@@ -37,5 +38,10 @@ echo "🐚 Shell setup complete."
 echo "🐙 Setting up Git..."
 ./git-setup.sh
 echo "🐙 Git setup complete."
+
+# Set up Hammerspoon
+echo "🛠 Setting up Hammerspoon..."
+./hammerspoon/hammerspoon.sh
+echo "🛠 Hammerspoon setup complete."
 
 echo "✅ macOS setup complete."
