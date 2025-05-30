@@ -56,6 +56,8 @@ config_lines=(
 # Add the configuration lines to .zshrc
 add_lines_to_zshrc "${config_lines[@]}"
 
+# Setup Powerlevel10k theme
+
 add_to_zshrc "# Load Powerlevel10k Theme"
 
 echo "ZSH_CUSTOM set to $ZSH_CUSTOM"
@@ -73,6 +75,16 @@ add_lines_to_zshrc \
     '# Load Powerlevel10k Theme' \
     'ZSH_THEME="powerlevel10k/powerlevel10k"' \
     "source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme"
+
+add_to_zshrc "POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true"
+
+# Copy the p10k config file (always override)
+P10K_CONFIG="$ZSH_CUSTOM/.p10k.zsh"
+echo "📄 Overwriting Powerlevel10k configuration at $P10K_CONFIG..."
+cp "$(dirname "$0")/.p10k.zsh" "$P10K_CONFIG"
+
+# Load Powerlevel10k configuration if it exists
+add_to_zshrc "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"
 
 add_to_zshrc "# Add plugins"
 
@@ -465,6 +477,53 @@ add_to_zshrc "# Add .NET Core SDK tools"
 add_to_zshrc "PATH='$PATH:/Users/troelslund/.dotnet/tools'"
 
 echo "Zsh installed and configured successfully."
+
+# =============================
+# Config terminal app
+# =============================
+
+# Standard config location for dotfiles
+DOTFILES_TERMINAL="Custom.terminal"
+# Path to the terminal config destination used by Terminal.app
+TARGET_TERMINAL="$HOME/Library/Application Support/com.apple.Terminal/Custom.terminal"
+
+# Backup current terminal config if it exists
+if [ -f "$TARGET_TERMINAL" ]; then
+    echo "📦 Backing up existing Terminal config to Custom.backup.terminal"
+    cp "$TARGET_TERMINAL" "$TARGET_TERMINAL.backup"
+fi
+
+# Replace the terminal config
+echo "📦 Copying Terminal config from $DOTFILES_TERMINAL"
+cp "$DOTFILES_TERMINAL" "$TARGET_TERMINAL"
+
+# =============================
+# Configure tmux
+# =============================
+
+# Path to your custom config file
+CUSTOM_CONFIG="./.tmux.conf"
+
+# Path to tmux config destination
+TARGET="$HOME/.tmux.conf"
+
+# Backup current config if it exists
+if [ -f "$TARGET" ]; then
+    echo "Backing up existing ~/.tmux.conf to ~/.tmux.conf.backup"
+    cp "$TARGET" "$TARGET.backup"
+fi
+
+# Replace the config
+echo "Replacing ~/.tmux.conf with $CUSTOM_CONFIG"
+cp "$CUSTOM_CONFIG" "$TARGET"
+
+# Optional: reload tmux config if tmux is running
+if tmux info &>/dev/null; then
+    echo "Reloading tmux config"
+    tmux source-file "$TARGET"
+else
+    echo "tmux is not running. Config will be loaded next time you start tmux."
+fi
 
 exit 0
 # =============================

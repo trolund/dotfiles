@@ -91,4 +91,16 @@ dotnet tool install try-convert -g
 dotnet tool install dotnet-dump -g
 dotnet tool install dotnet-serve -g
 dotnet tool install NuKeeper -g
+
+# This script installs TPM (Tmux Plugin Manager) if not already installed
+
+TPM_DIR="$HOME/.tmux/plugins/tpm"
+
+if [ ! -d "$TPM_DIR" ]; then
+    echo "Installing TPM (Tmux Plugin Manager)..."
+    git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+else
+    echo "TPM already installed at $TPM_DIR"
+fi
+
 echo "Installation done!"
