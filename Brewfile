@@ -4,7 +4,6 @@
 
 tap "homebrew/bundle"       # Enables Brewfile support
 tap "homebrew/cask"         # For installing GUI apps
-tap "homebrew/cask-fonts"   # Optional: fonts via Homebrew
 
 # =============================
 # Fonts
@@ -67,11 +66,12 @@ cask "iterm2"
 cask "go2shell"
 cask "monitorcontrol"
 cask "hammerspoon"
+# cask "nikitabobko/tap/aerospace"
 
 ## Install Mac App Store applications
 # 'mas install' requires the app id, which can be found by running 'mas search <app_name>'
 # mas "The Unarchiver", id: 425424353
-mas "Slack", id: 803453959
+# mas "Slack", id: 803453959
 # mas "Microsoft Teams", id: 1417478133
 # mas "Microsoft OneDrive", id: 823766827 
 mas "Magnet", id: 441258766
@@ -94,22 +94,8 @@ vscode "github.copilot-labs"
 vscode "yzhang.markdown-all-in-one"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "ionide.ionide-fsharp"
-vscode "ms-vscode.csharp"
 vscode "ms-vscode.azurecli"
-vscode "ms-vscode.azurestorage"
-vscode "ms-vscode.azurestorage-explorer"
 vscode "ms-vscode.azure-account"
-vscode "ms-vscode.azure-devops"
-vscode "ms-vscode.azure-pipelines"
-vscode "ms-vscode.azure-spring-cloud"
-vscode "ms-vscode.azure-functions"
 vscode "sharat.vscode-brewfile"
 vscode "adrianwilczynski.csharp-to-typescript"
 vscode "ms-vscode-remote.remote-containers"
-
-# =============================
-# Cleanup
-# =============================
-
-# Remove outdated versions from the cellar
-brew "cleanup", args: ["--prune=all"]
