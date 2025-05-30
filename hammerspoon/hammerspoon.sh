@@ -11,11 +11,11 @@ echo "📂 Ensuring Hammerspoon's Spoons directory exists..."
 mkdir -p ~/.hammerspoon/Spoons
 echo "📂 Spoons directory is ready."
 
-# Copy the Spoon folders into Hammerspoon's Spoon directory
-echo "📦 Copying Spoon files to Hammerspoon's Spoons directory..."
-cp -r window-manager-spoon/WindowManager.spoon ~/.hammerspoon/Spoons/
-cp -r llm-spoon/AiHelper.spoon ~/.hammerspoon/Spoons/
-echo "📦 Spoon files copied."
+# Move the Spoon folders into Hammerspoon's Spoon directory
+echo "📦 Moving Spoon files to Hammerspoon's Spoons directory..."
+mv window-manager-spoon/WindowManager.spoon ~/.hammerspoon/Spoons/
+mv llm-spoon/AiHelper.spoon ~/.hammerspoon/Spoons/
+echo "📦 Spoon files moved."
 
 # copy the init.lua to the .hammerspoon directory
 echo "📄 Copying hammerspoon/init.lua to ~/.hammerspoon/init.lua..."
