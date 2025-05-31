@@ -483,6 +483,7 @@ echo "Zsh installed and configured successfully."
 # =============================
 
 # Standard config location for dotfiles
+PROFILE_NAME="Custom"
 DOTFILES_TERMINAL="Custom.terminal"
 # Path to the terminal config destination used by Terminal.app
 TARGET_TERMINAL="$HOME/Library/Application Support/com.apple.Terminal/Custom.terminal"
@@ -496,6 +497,18 @@ fi
 # Replace the terminal config
 echo "📦 Copying Terminal config from $DOTFILES_TERMINAL"
 cp "$DOTFILES_TERMINAL" "$TARGET_TERMINAL"
+
+# Open the .terminal profile to trigger import
+open "$DOTFILES_TERMINAL"
+
+# Wait a moment for Terminal to register the profile
+sleep 1
+
+# Set the default and startup profile
+defaults write com.apple.Terminal "Default Window Settings" -string "$PROFILE_NAME"
+defaults write com.apple.Terminal "Startup Window Settings" -string "$PROFILE_NAME"
+
+echo "✅ Terminal profile '$PROFILE_NAME' set as default and startup profile."
 
 # =============================
 # Configure tmux

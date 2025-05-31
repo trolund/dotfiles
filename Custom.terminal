@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>BackgroundBlur</key>
-		<real>0.2</real>
+		<real>0.4</real>
 		<key>BackgroundColor</key>
 		<data> YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 			AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGmCwwXHR4lVSRudWxs1Q0ODxAR
