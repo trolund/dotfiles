@@ -174,6 +174,9 @@ defaults write NSGlobalDomain NSTagPickerDisclosedState -bool false
 # Completely Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
+# automatically hide and show the menu bar to always have more screen space
+defaults write NSGlobalDomain _HIHideMenuBar -bool true && killall SystemUIServer
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Kill affected apps

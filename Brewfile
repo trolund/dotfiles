@@ -14,6 +14,7 @@ cask "font-fira-mono"      # Fira Mono font for terminal
 cask "font-jetbrains-mono"  # JetBrains Mono font for programming
 cask "font-roboto-mono"     # Roboto Mono font for programming
 cask "font-source-code-pro" # Source Code Pro font for programming
+cask "font-meslo-lg-nerd-font" # MesloLGS NF font for terminal
 
 # =============================
 # Command Line Tools

@@ -1,12 +1,13 @@
+export TERM="xterm-256color"
+# Set the default user to the current user
+export DEFAULT_USER=$USER
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# Set the default user to the current user
-export DEFAULT_USER=$USER
 
 # Load Powerlevel10k Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
